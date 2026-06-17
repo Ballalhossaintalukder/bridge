@@ -42,7 +42,7 @@ const request = (url, { data = '', followRedirects = false, ...options } = {}) =
                     if (timeoutHandler) {
                         clearTimeout(timeoutHandler);
                     }
-                    if (statusCode >= 300 && statusCode < 400 && followRedirects) {
+                    if (statusCode && statusCode >= 300 && statusCode < 400 && followRedirects && headers['location']) {
                         request(headers['location'], {
                             data, followRedirects, ...options,
                         }).then(resolve).catch(reject)

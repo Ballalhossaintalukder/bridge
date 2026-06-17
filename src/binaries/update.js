@@ -11,7 +11,7 @@ const pythonConstants = {
   match: {
     x64: /cpython-(\d+\.\d+\.\d+)\+\d+-x86_64_v3-unknown-linux-gnu-pgo\+lto-full\.tar\.zst/g,
     arm64:
-      /cpython-(\d+\.\d+\.\d+)\+\d+-aarch64-unknown-linux-gnu-lto-full\.tar\.zst/g,
+      /cpython-(\d+\.\d+\.\d+)\+\d+-aarch64-unknown-linux-gnu-pgo\+lto-full\.tar\.zst/g,
   },
   index() {
     return `https://github.com/astral-sh/python-build-standalone/releases/expanded_assets/${this.tag}`;
