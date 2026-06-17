@@ -68,7 +68,7 @@ fi
 
 if ! command -v go &> /dev/null; then
     curl -sS https://webinstall.dev/golang@stable | WEBI__GO_ESSENTIALS=true bash
-    source ~/.config/envman/PATH.env
+    . ~/.config/envman/PATH.env
 fi
 
 if [ -d "./deployd" ]; then

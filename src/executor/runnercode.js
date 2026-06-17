@@ -235,7 +235,7 @@ export async function runConfigCodeFeatures(key, value, writeLog, domaindata, ss
             } else {
                 await writeLog("$> Installing Neovim Kickstarter config");
                 await sshExec(`git clone https://github.com/nvim-lua/kickstart.nvim ~/.config/nvim`);
-                await sshExec(`sed -i "s/vim.g.have_nerd_font = false/vim.g.have_nerd_font = true/g" ~/.config/nvim/init.lua`);
+                await sshExec(`sed -i "s/vim.g.have_nerd_font = false/vim.g.have_nerd_font = true\nvim.g.clipboard = 'osc52'/g" ~/.config/nvim/init.lua`);
                 await sshExec(`sed -i "s/-- require 'kickstart./require 'kickstart./g" ~/.config/nvim/init.lua`);
                 await writeLog("$> nvim init done! Watch tutorial here: https://www.youtube.com/watch?v=m8C0Cq9Uv9o");
             }
