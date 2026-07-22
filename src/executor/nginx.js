@@ -158,8 +158,8 @@ class NginxExecutor {
             node._add('root', info.root);
             node._add('access_log', info.access_log);
             node._add('error_log', info.error_log);
-            node._add('ssl_certificate', info.ssl_certificate);
-            node._add('ssl_certificate_key', info.ssl_certificate_key);
+            info.ssl_certificate && node._add('ssl_certificate', info.ssl_certificate);
+            info.ssl_certificate_key && node._add('ssl_certificate_key', info.ssl_certificate_key);
         }
         if (info.config.error_pages && info.config.error_pages.length > 0) {
             for (const error_page of info.config.error_pages) {
